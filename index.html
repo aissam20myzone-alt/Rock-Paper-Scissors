@@ -2,44 +2,30 @@
 <html>
     <head>
         <script>
-            console.log("Hello")
-            function getComputerChoice(){
-                const list = ["rock", "paper","scissors"];
-                const value = Math.floor(Math.random() * 3);
-                return list[value]
-            }
-            function getHumanChoice(){
-                
-                return prompt("Enter a choice [rock, paper,scissors]");
-            }
 
-            function playRound(humanChoice, computerChoice) {
-              console.log("HumanChoice ", humanChoice)
-              console.log("ComputerChoice ",computerChoice)
+            function Book(title, author, pages){
 
-              if(humanChoice === 'rock'){
-                if(computerChoice in ["paper","scissors"]){
-                    console.log("You win !")
-                }else{
-                   console.log(" Equal !")
+                if(!new.target){
+                    throw Error("Must use New")
                 }
-              }else{
-                    if(computerChoice === 'rock'){
-                        if(humanChoice in ["paper","scissors"]){
-                            console.log("Computer wins !")
-                        }else{
-                        console.log(" Equal !")
-                        }
-                    }
-                 }
+                this.title =title
+                this.author=author
+                this.pages=pages
+                this.info = function(){
+                    console.log("The {} by {} Tolkien, {} pages, not read yet",title,author,pages)
+                }
 
             }
-            const humanSelection = getHumanChoice();
-            const computerSelection = getComputerChoice();
 
-            playRound(humanSelection, computerSelection);
+            book1 = new Book("Hobbit","Me", 299)
+            book2 = new Book("Hobbit2","Me2", 400)
 
+            book1.info()
+            book2.info()
         </script>
+
+
+        
     </head>
     <body>
     </body>
