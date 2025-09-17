@@ -8,8 +8,39 @@
                 const value = Math.floor(Math.random() * 3);
                 return list[value]
             }
-            console.log(getComputerChoice())
+            function getHumanChoice(){
+                
+                return prompt("Enter a choice [rock, paper,scissors]");
+            }
+
+            function playRound(humanChoice, computerChoice) {
+              console.log("HumanChoice ", humanChoice)
+              console.log("ComputerChoice ",computerChoice)
+
+              if(humanChoice === 'rock'){
+                if(computerChoice in ["paper","scissors"]){
+                    console.log("You win !")
+                }else{
+                   console.log(" Equal !")
+                }
+              }else{
+                    if(computerChoice === 'rock'){
+                        if(humanChoice in ["paper","scissors"]){
+                            console.log("Computer wins !")
+                        }else{
+                        console.log(" Equal !")
+                        }
+                    }
+                 }
+
+            }
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
+
+            playRound(humanSelection, computerSelection);
+
         </script>
     </head>
-    <body></body>
+    <body>
+    </body>
 </html>
